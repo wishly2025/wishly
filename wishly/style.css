@@ -499,9 +499,7 @@ display: none; /* Hide initially */
     transform: rotate(-10deg) translate(-50px, -240px); 
     z-index: 2;
 }
-.hidden {
-    display: none;
-}
+
 
 #watchAgain {
     position: absolute;
