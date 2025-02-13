@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receive Tickets</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+    <script  src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+    <!-- Back Button -->
+    <a href="/fifthpage.html">
+        <img class="back-button" src="img/Back.png" />
+    </a>
+    
+
+    <div class="overlap sixpage">
+        <div class="tap-indicator">
+            <img class="curly-arrow" src="img/Curly Arrow.png" />
+            <div class="text-wrapper tap">tap!</div>
+        </div>
+        <div class="ticketContainer">
+            <img class="ticket ticket1" src="img/wineberryTicket dev.png" alt="Ticket 1">
+            <img class="ticket ticket2" src="img/wineberryTicket dev.png" alt="Ticket 2">
+        </div>
+        <div class="tap-indicator2">
+            <div class="text-wrapper tap">tap!</div>
+            <img class="curly-arrow2" src="img/Curly Arrow.png" />
+           
+        </div>
+    </div>
+    
+    <!-- Receive Tickets Button -->
+    <button class="button" id="nextPageButton">Receive tickets</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const nextPageButton = document.getElementById("nextPageButton");
+    
+            if (nextPageButton) {
+                nextPageButton.addEventListener("click", () => {
+                    window.location.href = "seventhpage.html"; // Change to your desired page
+                });
+            } else {
+                console.error("❌ Button not found!");
+            }
+        });
+    </script>
+    
+
+</body>
+</html>
