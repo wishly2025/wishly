@@ -1,0 +1,587 @@
+/* Basic styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e6e6fa;
+    
+}
+p{
+    font-family: "Young serif";
+}
+
+.iphone-pro {
+    text-align: center;
+    position: relative;
+}
+
+.centertext {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: "Young serif";
+
+}
+
+.hhh{ 
+    height: 20vh;
+    width: 20vh;
+}
+
+/* Heart Container */
+.overlap-group {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.movetext{
+animation: moveUpDown 3s infinite ease-in-out; /* Apply animation */
+    animation-delay: 1s;
+}
+
+/* Animation for moving the overlap-group */
+@keyframes moveUpDown {
+    0%, 100% { transform: translateY(0); }  /* Normal position */
+    25% { transform: translateY(-10px); }   /* Move up when heart expands */
+    50% { transform: translateY(-15px); }   /* Move further up when bigger */
+    75% { transform: translateY(-10px); }   /* Start moving down */
+}
+
+.hhh{
+    width: 8vh;
+    height: 8vh;
+}
+
+/* Base Heart */
+.heart {
+    position: absolute;
+    width: 60px;
+    transform-origin: center; /* Ensures scaling doesn't shift position */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1); /* Keeps it centered */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Keyframes for Sequential Growth */
+@keyframes heartbeat-sequence2 {
+    0%   { transform: translate(-50%, -50%) scale(1); }   /* Start & End: Normal */
+    25%  { transform: translate(-50%, -50%) scale(1.5); } /* Heart 2 Grows */
+    50%  { transform: translate(-50%, -50%) scale(1.5); } /* Heart 3 Grows */
+    75%  { transform: translate(-50%, -50%) scale(1.5); } /* Heart 3 Shrinks */
+    100% { transform: translate(-50%, -50%) scale(1); }   /* Back to Normal */
+}
+
+/* Keyframes for Sequential Growth */
+@keyframes heartbeat-sequence3 {
+    0%   { transform: translate(-50%, -50%) scale(1); }   /* Start & End: Normal */
+    25%  { transform: translate(-50%, -50%) scale(1); }   /* Heart 2 Grows */
+    50%  { transform: translate(-50%, -50%) scale(2); }   /* Heart 3 Grows (Bigger than 2) */
+    75%  { transform: translate(-50%, -50%) scale(1.5); } /* Heart 3 Shrinks */
+    100% { transform: translate(-50%, -50%) scale(1); }   /* Back to Normal */
+}
+
+/* Apply Animation with Timing */
+.heart2 {
+    animation: heartbeat-sequence2 3s infinite ease-in-out;
+    animation-delay: 1s; /* Starts a bit later */
+    opacity: 0.7;
+}
+
+.heart3 {
+    animation: heartbeat-sequence3 3s infinite ease-in-out;
+    animation-delay: 1s; /* Starts after Heart 2 */
+    opacity: 0.5;
+}
+
+/* Tap to Start */
+.text-wrapper {
+    font-size: 14px;
+    color:  rgb(211, 15, 15);
+    margin-top: 10px;
+    font-family: "Young serif";
+}
+
+
+
+.tap-indicator {
+    position: absolute;
+    bottom : 17vh; 
+    left: 5vh; 
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 5px; /* Add space between arrow & text */
+    font-family: "Young serif";
+}
+
+.tap-indicator2 {
+    position: absolute;
+    bottom : -12vh; 
+    right: 11vh; 
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 5px; /* Add space between arrow & text */
+    font-family: "Young serif";
+}
+
+
+/* Curly Arrow */
+.curly-arrow {
+    width: 6vh; /* Adjust size */
+}
+
+
+.curly-arrow2 {
+    width: 6vh; 
+    transform: rotate(180deg);
+    position: absolute;
+    left: 6vh;
+    bottom: 3.5vh;
+
+}
+/* "tap!" text */
+.tap {
+    font-size: 2.6vh;
+    color: rgb(211, 15, 15);
+    font-weight: bold;
+    position: relative;
+    top: -3.1vh;
+    font-family: "Young serif";
+}
+
+/* Overlap group for Certificate & Trophy */
+.overlap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Move to exact center */
+    width: auto;
+    height: auto;
+}
+
+.tenpage{
+    transform: translate(0px, -8vh);
+}
+
+/* Certificate - Adjust Position */
+.certificate {
+    width: 45vh; /* Adjust size */
+    position: absolute;
+    z-index: 1; /* Keep above trophy */
+    transform: rotate(8deg); /* Initial tilt */
+    transition: transform 0.5s ease, z-index 0.3s ease;
+}
+
+/* Trophy - Adjust Position */
+.trophy {
+    width: 15vh;
+    position: absolute;
+    right: 50px; /* Moves Left */
+    transform: translate(0px, 50px); /* Fine-tune */
+    z-index: 2; /* Behind certificate */
+}
+
+/* Back Button */
+.back-button {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 30px;
+    cursor: pointer;
+}
+.certificate.active {
+    transform: rotate(0deg); /* Rotate to straight */
+    z-index: 3; /* Bring to front */
+}
+
+/* Button - Initially Hidden */
+.button {
+    position: absolute;
+    bottom: 4vh;
+    background-color: #e6e6fa;
+    color: #3d2b56;
+    font-size: 2vh;
+    padding: 10px 20px;
+    border: 2px solid #3d2b56;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    font-family: "Young serif";
+}
+.hidden{
+display: none; /* Hide initially */
+}
+/* Show Button */
+.show {
+    display: block; /* Make it visible */
+    opacity: 1;
+}
+
+ .text-wrapper-2 {
+    position: absolute;
+  width: 90%;
+  height: 20%;
+  font-family: "Young Serif";
+  font-weight: 400;
+  color: #2e306e;
+  font-size: 3vh;
+  text-align: center;
+  letter-spacing: 0.80px;
+  line-height: normal;
+}
+
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vh;
+    margin-bottom: 5vh;
+}
+
+/* Card Styling */
+.card {
+    width: 20vh;
+    height: 30vh;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+/* Flip Effect */
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back of the Card */
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Front Image */
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Back Side */
+.card-back {
+    background: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.ipad-container {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 60vh;
+
+    margin-top: 50px;
+}
+
+.ipad-container img {
+    width: 170%; /* Ensure the image does not overflow */
+    height: 170%;
+}
+
+
+
+
+
+.ticket-container {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Individual Ticket Styling */
+.ticket {
+    position: absolute;
+    width: 180px;
+    transition: transform 0.7s cubic-bezier(0.25, 1.25, 0.5, 1);
+}
+
+/* Scattered Initial Rotation */
+.ticket1 { transform: rotate(-15deg) translate(-80px, -150px); }
+.ticket2 { transform: rotate(10deg) translate(-60px, -51px); }
+
+.message-box {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.5vh;
+    text-align: center;
+    margin-bottom: 100px;
+    width:50%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 50px 20%;
+    
+}
+
+/***********************************************/
+
+
+
+/* Main Content Layout */
+.content {
+    display: flex;
+    gap: 0vh;
+    justify-content: space-between;
+    height: 60%;
+    
+}
+
+/* Curtain Section */
+.curtain-box {
+    width: 55%;
+    object-fit: contain;
+}
+
+.curtain {
+    margin-bottom: 0px;
+    object-fit: contain;
+    width: 100%;
+    height: 95%;
+}
+
+.vertical-line{
+    width: 0.1px;
+    background-color: #9698C8;
+    margin-left: 1%;
+    margin-right: 10%;
+}
+
+/* Info Section */
+.info-box {
+    flex-direction: column;
+    margin-top: 15vh;
+    width: 40%;
+    padding: auto;
+    
+}
+hr{
+    background-color: #9698C8;
+    border: none;
+    height: 1px;
+}
+
+/* Valentine's Message */
+.valentine-message {
+    text-align: center;
+    font-size: 2vh;
+    font-weight: bold;
+    color: #4a4a4a;
+    width: 15vh;
+    height: 20vh;
+    max-width: 100px;
+    max-height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 56.50px; 
+    border-top-right-radius: 56.50px; 
+    border: 1px white solid
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 15vh;
+    max-width: 100px;
+    height: 2vh;
+    background: #bbb;
+    border-radius: 10px;
+    margin: 10px 0;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.5);
+    
+}
+
+/* Start Button */
+.start-button {
+    width: 15vh;
+    max-width: 100px;
+    padding: 10px 20px;
+    background: #9370DB;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.5vh;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.main-box{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Loading Container */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Loading Circle Spinner */
+.loading-spinner {
+    width: 80px;
+    height: 80px;
+    border: 8px solid rgba(90, 90, 150, 0.3); /* Light outer ring */
+    border-top: 8px solid rgba(90, 90, 150, 1); /* Darker loading effect */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Loading Text */
+.loading-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3a3a60;
+    transform:  translate(0px, -70px);
+}
+
+/* Continuous Spinning Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.photo-container {
+    position: relative;
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Photo Styling */
+.photo-container img {
+    width: 100%;
+    border-radius: 10px;
+    
+}
+
+/* Tap Text */
+.tap-text {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-style: italic;
+    color: #d2d2f3;
+}
+
+/* Zoom Effect */
+.zoom {
+    transform: scale(1.2);
+}
+
+.max {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    position: relative;
+}
+
+/* Second background layer */
+.secondBg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 300px;
+    background-color: #e6e6fa; /* Light purple */
+    position: absolute;
+    overflow: hidden;
+    z-index: 4;
+    border-radius: 10px; /* Optional: Soft rounded corners */
+    box-shadow: inset 0px 10px 20px rgba(0, 0, 0, 0.3); /* Inner shadow */
+}
+
+
+/* Third background layer */
+.thirdBg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 200px;
+    background-color: #c5bbda;
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+    border-radius: 10px; /* Optional: Soft rounded corners */
+    box-shadow: inset 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+.photoStrip{
+    z-index: 1;
+    transform: rotate(5deg) translate(-20px, -400px);
+}
+
+.valen {
+    position: absolute;
+    width: 180px;
+    transition: transform 0.7s cubic-bezier(0.25, 1.25, 0.5, 1);
+}
+
+.valencard { 
+    transform: rotate(7deg) translate(-130px, -50px); 
+    width: 250px;
+    z-index: 1;
+}
+.psva { 
+    transform: rotate(-10deg) translate(-50px, -240px); 
+    z-index: 2;
+}
+
+
+#watchAgain {
+    position: absolute;
+    bottom:  110px;
+    right: 50px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+}
