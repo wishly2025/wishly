@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     if (pb3){
     pb3.addEventListener("click", () =>{
-      window.location.href = "/forthpage.html";
+      window.location.href = "http://wishly.club/wishly_poon/forthpage.html";
     });}else{
         console.error("❌ The 'start-button' was not found!");
     }
@@ -29,13 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
         
     if(pb4){
     pb4.addEventListener("click", () =>{
-        window.location.href = "/fifthpage.html";
+        window.location.href = "http://wishly.club/wishly_poon/fifthpage.html";
       });
     }
 
     if (startButton) {
         startButton.addEventListener("click", () => {
-            window.location.href = "/eightpage.html"; // Redirects to page 8
+            window.location.href = "http://wishly.club/wishly_poon/eightpage.html"; // Redirects to page 8
         });
     } else {
         console.error("❌ The 'start-button' was not found!");
@@ -164,7 +164,7 @@ function dropPhotoStrip() {
         }, 800); // Delay of 500ms before the second drop
         isdrop = true;
     } else {
-        window.location.href = "/tenpage.html";
+        window.location.href = "http://wishly.club/wishly_poon/tenpage.html";
     }
 }
 
